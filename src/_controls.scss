@@ -1,0 +1,86 @@
+.gs-controls {
+  margin: 2rem 0;
+  display: flex;
+
+  &__container {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+
+    &:first-of-type {
+      .gs-controls__btn-section {
+        position: relative;
+
+        &:before,
+        &:after {
+          height: 100%;
+          position: absolute;
+          top: 0;
+        }
+
+        &::before {
+          content: "";
+          width: 1rem;
+          border: 2px solid;
+          border-right: none;
+          left: -1.5rem;
+        }
+
+        &::after {
+          content: "USE OF WATER";
+          font-size: 12px;
+          width: 6rem;
+          height: 100%;
+          left: -8.5rem;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+
+        &:last-of-type {
+          &::before {
+            height: calc(100% - 1rem);
+            top: 1rem;
+          }
+          &::after {
+            content: "CLIMATE SCENARIO";
+            height: calc(100% - 1rem);
+            top: 1rem;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn-spacer {
+    height: 1rem;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      transparent 49%,
+      black 50%,
+      transparent 51%
+    );
+  }
+
+  &__btn {
+    width: 11rem;
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border: 2px solid;
+
+    &.primary {
+      font-weight: bold;
+    }
+  }
+}
