@@ -1,9 +1,15 @@
 #map {
-  fill: $color-urban-average;
-  opacity: 0.4;
+  fill: $color-average;
 }
 
-#environmental-map,
-#rural-map {
+#environmental,
+#rural,
+#urban {
+  visibility: hidden;
   opacity: 0;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
 }

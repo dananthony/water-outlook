@@ -24,6 +24,7 @@
           height: 100%;
           position: absolute;
           top: 0;
+          color: $color-navy;
         }
 
         &::before {
@@ -73,14 +74,29 @@
   }
 
   &__btn {
+    transition: all 200ms ease-in-out;
+    transition-property: background, color;
     width: 11rem;
     font-size: 12px;
     padding: 0.5rem 1rem;
     text-transform: uppercase;
-    border: 2px solid;
+    border: 2px solid $color-navy;
+    background: none;
+    color: $color-navy;
+    cursor: pointer;
 
     &.primary {
       font-weight: bold;
+    }
+
+    &.active,
+    &:hover {
+      background: $color-navy;
+      color: #fff;
+    }
+
+    &:focus {
+      outline: 0;
     }
   }
 }
