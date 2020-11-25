@@ -10,41 +10,72 @@
   <body>
     <main>
       <div class="site-container">
-        <div class="gs-controls">
-          <div class="gs-controls__container">
+        <div class="gs-header">
+          <div class="gs-header__wrapper">
+            <div class="gs-header__controls">
 
-            <div class="gs-controls__btn-wrapper">
-              <div class="gs-controls__btn-section">
-                <button class="gs-controls__btn active" data-use="urban">Urban</button>
+              <div class="gs-header__btn-wrapper">
+                <div class="gs-header__btn-section">
+                  <button class="gs-header__btn active" data-use="urban" data-type="urban-average">Urban</button>
+                </div>
+                <div class="gs-header__btn-section">
+                  <div class="gs-header__btn-spacer"></div>
+                  <button class="gs-header__btn active" data-climate="average" data-type="urban-average">Average</button>
+                  <div class="gs-header__btn-spacer"></div>
+                  <button class="gs-header__btn" data-climate="dry" data-type="urban-dry">Dry</button>
+                  <div class="gs-header__btn-spacer"></div>
+                  <button class="gs-header__btn" data-climate="worst" data-type="urban-worst">Worst on record</button>
+                </div>
               </div>
-              <div class="gs-controls__btn-section">
-                <div class="gs-controls__btn-spacer"></div>
-                <button class="gs-controls__btn active" data-climate="average">Average</button>
-                <div class="gs-controls__btn-spacer"></div>
-                <button class="gs-controls__btn" data-climate="dry">Dry</button>
-                <div class="gs-controls__btn-spacer"></div>
-                <button class="gs-controls__btn" data-climate="worst">Worst on record</button>
+  
+              <div class="gs-header__btn-wrapper">
+                <div class="gs-header__btn-section">
+                  <button class="gs-header__btn" data-use="rural" data-type="rural-average">Rural</button>
+                </div>
+                <div class="gs-header__btn-section">
+                  <div class="gs-header__btn-spacer"></div>
+                  <button class="gs-header__btn" data-climate="average" data-type="rural-average">Wet/Average</button>
+                  <div class="gs-header__btn-spacer"></div>
+                  <button class="gs-header__btn" data-climate="dry" data-type="rural-dry">Dry</button>
+                  <div class="gs-header__btn-spacer"></div>
+                  <button class="gs-header__btn" data-climate="worst" data-type="rural-very-dry">Very dry</button>
+                </div>
+              </div>
+  
+              <div class="gs-header__btn-wrapper">
+                <button class="gs-header__btn" data-use="environmental" data-type="environmental">Environmental</button>
+              </div>
+  
+            </div>
+            <div class="gs-header__legend">
+              <h2 class="gs-header__legend-title"><span>Urban</span> water</h2>
+              <h3 class="gs-header__legend-subtitle"><span>Average</span> climate scenario</h3>
+              <!-- Text changes based on climate scenario -->
+              <div class="gs-header__legend-text-wrapper">
+                <p class="gs-header__legend-text active" data-type="urban-average">This summer, wetter than average conditions are expected.<br>Based on this, no water restrictions expected in any city or town.</p>
+                <p class="gs-header__legend-text" data-type="urban-dry">Dry conditions are unlikely to occur this summer.*</p>
+                <p class="gs-header__legend-text" data-type="urban-worst">Worst on record conditions are very unlikely to occur this summer.*</p>
+                <p class="gs-header__legend-text" data-type="rural-average">Conditions that are likely to occur this summer.</p>
+                <p class="gs-header__legend-text" data-type="rural-dry">Conditions could occur this summer, more likely to occur in the south west.*</p>
+                <p class="gs-header__legend-text" data-type="rural-very-dry">Conditions are very unlikely to occur this summer.*</p>
+                <p class="gs-header__legend-text" data-type="environmental">Note: This map does not include all the possible environmental watering that may occur in 2020-21.<br>
+                For more information on other activities across Victoria, please visit <a href="www.vewh.vic.gov.au" target="_blank">www.vewh.vic.gov.au</a>.</p>
+              </div>
+              <div class="gs-header__legend-key">
+                <div class="gs-header__legend-key-item">
+                  <img class="gs-header__legend-key-icon" src="./img/icons/legend-urban-green.svg" />
+                  <p>Water restrictions not expected</p>
+                </div>
+                <div class="gs-header__legend-key-item">
+                  <img class="gs-header__legend-key-icon" src="./img/icons/legend-urban-yellow.svg" />
+                  <p>Water restrictions/drought response<br>possible in 6-12 months</p>
+                </div>
+                <div class="gs-header__legend-key-item">
+                  <img class="gs-header__legend-key-icon" src="./img/icons/legend-urban-red.svg" />
+                  <p>Water restrictions/drought<br>response possible over summer</p>
+                </div>
               </div>
             </div>
-
-            <div class="gs-controls__btn-wrapper">
-              <div class="gs-controls__btn-section">
-                <button class="gs-controls__btn" data-use="rural">Rural</button>
-              </div>
-              <div class="gs-controls__btn-section">
-                <div class="gs-controls__btn-spacer"></div>
-                <button class="gs-controls__btn" data-climate="average">Wet/Average</button>
-                <div class="gs-controls__btn-spacer"></div>
-                <button class="gs-controls__btn" data-climate="dry">Dry</button>
-                <div class="gs-controls__btn-spacer"></div>
-                <button class="gs-controls__btn" data-climate="worst">Very dry</button>
-              </div>
-            </div>
-
-            <div class="gs-controls__btn-wrapper">
-              <button class="gs-controls__btn" data-use="environmental">Environmental</button>
-            </div>
-
           </div>
         </div>
         <div class="gs-map-container">

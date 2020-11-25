@@ -1,10 +1,10 @@
-.gs-controls {
+.gs-header {
   margin: 2rem 0;
   display: flex;
+  justify-content: flex-end;
 
-  &__container {
+  &__controls {
     display: flex;
-    margin-left: auto;
   }
 
   &__btn-wrapper {
@@ -16,7 +16,7 @@
     }
 
     &:first-of-type {
-      .gs-controls__btn-section {
+      .gs-header__btn-section {
         position: relative;
 
         &:before,
@@ -97,6 +97,42 @@
 
     &:focus {
       outline: 0;
+    }
+  }
+
+  &__legend {
+    margin-top: 2rem;
+    max-width: 560px;
+
+    &-title,
+    &-subtitle {
+      margin-bottom: 0.5rem;
+    }
+
+    &-text {
+      font-size: 12px;
+      margin-bottom: 1rem;
+      min-height: 28px;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      &[data-type="environmental"] {
+        margin-top: -24px;
+      }
+    }
+
+    &-key-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    &-key-icon {
+      width: 2rem;
+      margin-right: 1rem;
     }
   }
 }
