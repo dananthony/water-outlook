@@ -50,7 +50,7 @@
       line-height: 1.2;
       text-align: center;
       text-transform: uppercase;
-      cursor: pointer;
+      pointer-events: none;
 
       &.left {
         width: 140px;
@@ -68,6 +68,18 @@
         bottom: 0;
         transform: translateX(5px);
         text-align: left;
+      }
+
+      &.top {
+        top: 0;
+        transform: translate(-60px, -130%);
+      }
+
+      &.top-left {
+        top: 0;
+        left: -100%;
+        transform: translateX(-95px);
+        text-align: right;
       }
 
       &.wide {
@@ -117,6 +129,10 @@
 
     &[data-layer="rural"] .gs-map__marker-info-inner {
       border-color: $color-rural-border;
+    }
+
+    &[data-layer="environmental"] .gs-map__marker-info-inner {
+      border-color: $color-environmental-border;
     }
   }
 }
