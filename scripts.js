@@ -47,6 +47,14 @@ jQuery(function($) {
 		$('#map').css('fill', color);
 	}
 
+	// position points over map
+	$('.gs-map__marker').each(function() {
+		$(this).css({
+			left: $(this).data('x') + '%',
+			top: $(this).data('y') + '%'
+		});
+	});
+
 	// activate buttons
 	$('.gs-header__btn').on('click', function() {
 	
