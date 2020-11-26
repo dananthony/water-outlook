@@ -51,6 +51,28 @@
       text-align: center;
       text-transform: uppercase;
       cursor: pointer;
+
+      &.left {
+        width: 140px;
+        left: -100%;
+        top: unset;
+        bottom: 0;
+        transform: translateX(-115px);
+        text-align: right;
+      }
+
+      &.right {
+        width: 140px;
+        left: 100%;
+        top: unset;
+        bottom: 0;
+        transform: translateX(5px);
+        text-align: left;
+      }
+
+      &.wide {
+        width: 190px;
+      }
     }
 
     &-info {

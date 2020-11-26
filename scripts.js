@@ -143,10 +143,10 @@ jQuery(function($) {
 				// ide inactive rural markers and map illustrations 
 				if (contentType.indexOf('rural') > -1) {
 					if (climateScenario === "average") {
-						$('#coliban').show();
+						$('#coliban, #grampians').show();
 						$('#rural-map-images').show();
 					} else {
-						$('#coliban').hide();
+						$('#coliban, #grampians').hide();
 						$('#rural-map-images').hide();
 					}
 				}
@@ -179,10 +179,10 @@ jQuery(function($) {
 				// hide inactive rural markers and map illustrations 
 				if (contentType.indexOf('rural') > -1) {
 					if (climateScenario === "average") {
-						$('#coliban').show();
+						$('#coliban, #grampians').show();
 						$('#rural-map-images').show();
 					} else {
-						$('#coliban').hide();
+						$('#coliban, #grampians').hide();
 						$('#rural-map-images').hide();
 					}
 				}
