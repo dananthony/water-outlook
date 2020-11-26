@@ -105,6 +105,10 @@ jQuery(function($) {
 			$('#layers').children().removeClass('active');
 			$(mapLayer).addClass('active');
 
+			// update map data
+			$('.gs-map__marker').hide();
+			$('.gs-map__marker[data-layer="'+useType+'"]').show();
+
 			// set default climate scenario and map color
 			$(this).parent().next().find('.gs-header__btn').first().addClass('active');
 			$('#map').css('fill', '#fff');
@@ -149,6 +153,15 @@ jQuery(function($) {
 				var mapLayer = '#' + parentUseType;
 				$('#layers').children().removeClass('active');
 				$(mapLayer).addClass('active');
+
+				// update map data
+				$('.gs-map__marker').hide();
+				$('.gs-map__marker[data-layer="'+parentUseType+'"]').show();
+
+				// update markers for urban climate scenarios 
+				if (contentType.indexOf('urban') > -1) {
+					updateIcons(climateScenario);
+				}
 
 				// update base map colour
 				updateMapColor(climateScenario);
