@@ -138,6 +138,11 @@ jQuery(function($) {
 				// update marker if urban 
 				if (contentType.indexOf('urban') > -1) {
 					updateIcons(climateScenario);
+					if (climateScenario === "average") {
+						$('#urban-map-images').show();
+					} else {
+						$('#urban-map-images').hide();
+					}
 				}
 
 				// ide inactive rural markers and map illustrations 
@@ -174,6 +179,11 @@ jQuery(function($) {
 				// update markers for urban climate scenarios 
 				if (contentType.indexOf('urban') > -1) {
 					updateIcons(climateScenario);
+					if (climateScenario === "average") {
+						$('#urban-map-images').show();
+					} else {
+						$('#urban-map-images').hide();
+					}
 				}
 
 				// hide inactive rural markers and map illustrations 
