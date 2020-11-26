@@ -1,0 +1,15 @@
+.gs-footer {
+  margin: -2rem 0 2rem;
+
+  &__wrapper {
+    max-width: 680px;
+  }
+
+  &__text {
+    font-size: 12px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
