@@ -1,5 +1,6 @@
 jQuery(function($) {
 	$('#urban').addClass('active');
+	$('.gs-map__marker[data-layer="urban"] [data-climate-scenario="average"]').addClass('active');
 
 	// update the footer and sidebar
 	function updateFooter(contentType) {
@@ -45,6 +46,34 @@ jQuery(function($) {
 			color = "#ffcc99";
 		}
 		$('#map').css('fill', color);
+	}
+
+	function updateIcons(climateScenario) {
+		var greenIcon = 'img/icons/map-urban-green.svg'
+		var yellowIcon = 'img/icons/map-urban-yellow.svg'
+		var redIcon = 'img/icons/map-urban-red.svg'
+		if (climateScenario === "average") {
+			$('#barwon').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			$('#east-gippsland').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			$('#goulburn-valley').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			$('#north-east').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			$('#south-gippsland').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+
+		} 
+		if (climateScenario === 'dry') {
+			$('#barwon').attr('src', yellowIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #fed925');
+			$('#east-gippsland').attr('src', redIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #b8232f');
+			$('#goulburn-valley').attr('src', yellowIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #fed925');
+			$('#north-east').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			$('#south-gippsland').attr('src', greenIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+		}
+		if (climateScenario === 'worst') {
+			$('#barwon').attr('src', redIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #b8232f');
+			$('#east-gippsland').attr('src', redIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #b8232f');
+			$('#goulburn-valley').attr('src', yellowIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #fed925');
+			$('#north-east').attr('src', yellowIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #fed925');
+			$('#south-gippsland').attr('src', redIcon).siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #b8232f');
+		}
 	}
 
 	// position points over map
@@ -95,6 +124,15 @@ jQuery(function($) {
 
 				// update base map color
 				updateMapColor(climateScenario);
+
+				// update popup content
+				var markerContent = $('.gs-map__marker-info-inner [data-climate-scenario="'+climateScenario+'"]');
+				$(markerContent).addClass('active').siblings().removeClass('active');
+
+				// update marker if urban 
+				if (contentType.indexOf('urban') > -1) {
+					updateIcons(climateScenario);
+				}
 
 				// update legend 
 				updateLegend(contentType, buttonTitle);
