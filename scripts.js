@@ -1,6 +1,8 @@
 jQuery(function($) {
 	$('#urban').addClass('active');
-	$('.gs-map__marker[data-layer="urban"] [data-climate-scenario="average"]').addClass('active');
+	$('.gs-map__marker [data-climate-scenario="average"]').addClass('active');
+	$('.gs-map__marker').hide();
+	$('.gs-map__marker[data-layer="urban"]').show();
 
 	// update the footer and sidebar
 	function updateFooter(contentType) {
@@ -138,6 +140,17 @@ jQuery(function($) {
 					updateIcons(climateScenario);
 				}
 
+				// ide inactive rural markers and map illustrations 
+				if (contentType.indexOf('rural') > -1) {
+					if (climateScenario === "average") {
+						$('#coliban').show();
+						$('#rural-map-images').show();
+					} else {
+						$('#coliban').hide();
+						$('#rural-map-images').hide();
+					}
+				}
+
 				// update legend 
 				updateLegend(contentType, buttonTitle);
 
@@ -161,6 +174,17 @@ jQuery(function($) {
 				// update markers for urban climate scenarios 
 				if (contentType.indexOf('urban') > -1) {
 					updateIcons(climateScenario);
+				}
+
+				// hide inactive rural markers and map illustrations 
+				if (contentType.indexOf('rural') > -1) {
+					if (climateScenario === "average") {
+						$('#coliban').show();
+						$('#rural-map-images').show();
+					} else {
+						$('#coliban').hide();
+						$('#rural-map-images').hide();
+					}
 				}
 
 				// update base map colour

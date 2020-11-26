@@ -92,6 +92,10 @@
         }
       }
     }
+
+    &[data-layer="rural"] .gs-map__marker-info-inner {
+      border-color: $color-rural-border;
+    }
   }
 }
 
