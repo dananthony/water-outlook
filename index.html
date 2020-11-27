@@ -6,6 +6,15 @@
     <script src="scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/app.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      #environmental,
+      #rural,
+      #urban {
+        transition: all 800ms ease-out;
+        visibility: hidden;
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -79,7 +88,7 @@
         <div class="gs-map">
           <div class="gs-map__data">
             <!-- urban -->
-            <div class="gs-map__marker" data-layer="urban" data-x="7" data-y="-1">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="7" data-y="-1">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Lower Murray Water</p>
               <div class="gs-map__marker-info mobile-display-right">
@@ -88,7 +97,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="14" data-y="27">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="14" data-y="27">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Grampians Wimmera Mallee Water</p>
               <div class="gs-map__marker-info">
@@ -97,7 +106,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="8.5" data-y="64.3">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="8.5" data-y="64.3">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Wannon<br>Water</p>
               <div class="gs-map__marker-info mobile-display-right">
@@ -106,7 +115,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="35" data-y="37.5">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="35" data-y="37.5">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Coliban<br>Water</p>
               <div class="gs-map__marker-info">
@@ -115,7 +124,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="31.5" data-y="54.5">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="31.5" data-y="54.5">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Central<br>Highlands<br>Water</p>
               <div class="gs-map__marker-info">
@@ -124,7 +133,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="34" data-y="74">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="34" data-y="74">
               <img id="barwon" src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Barwon<br>Water</p>
               <div class="gs-map__marker-info">
@@ -135,7 +144,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="39.7" data-y="61">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="39.7" data-y="61">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Western<br>Water</p>
               <div class="gs-map__marker-info">
@@ -144,7 +153,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="49" data-y="47">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="49" data-y="47">
               <img id="goulburn-valley" src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Goulburn<br>Valley<br>Water</p>
               <div class="gs-map__marker-info">
@@ -155,7 +164,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="46.5" data-y="64">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="46.5" data-y="64">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Melbourne</p>
               <div class="gs-map__marker-info">
@@ -164,7 +173,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="49" data-y="74.8">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="49" data-y="74.8">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Westernport Water</p>
               <div class="gs-map__marker-info">
@@ -173,7 +182,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="56.5" data-y="85">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="56.5" data-y="85">
               <img id="south-gippsland" src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">South<br>Gippsland<br>Water</p>
               <div class="gs-map__marker-info">
@@ -190,7 +199,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="63" data-y="67.8">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="63" data-y="67.8">
               <img src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Gippsland<br>Water</p>
               <div class="gs-map__marker-info">
@@ -199,7 +208,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="65" data-y="42">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="65" data-y="42">
               <img id="north-east" src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">North East<br>Water</p>
               <div class="gs-map__marker-info">
@@ -216,7 +225,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="urban" data-x="78" data-y="58">
+            <div class="gs-map__marker" style="display: none" data-layer="urban" data-x="78" data-y="58">
               <img id="east-gippsland" src="img/icons/map-urban-green.svg" alt="urban" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">East<br>Gippsland<br>Water</p>
               <div class="gs-map__marker-info">
@@ -228,7 +237,7 @@
               </div>
             </div>
             <!-- rural -->
-            <div class="gs-map__marker" data-layer="rural" data-x="8" data-y="-1">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="8" data-y="-1">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Regulated<br>Murray System</p>
               <div class="gs-map__marker-info mobile-display-right">
@@ -239,7 +248,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="rural" data-x="42" data-y="39">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="42" data-y="39">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Regulated<br>Goulburn<br>System</p>
               <div class="gs-map__marker-info">
@@ -251,7 +260,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="rural" data-x="66" data-y="50">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="66" data-y="50">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title">Unregulated<br>Northern<br>Systems</p>
               <div class="gs-map__marker-info">
@@ -263,7 +272,7 @@
                 </div>
               </div>
             </div>
-            <div id="coliban" class="gs-map__marker" data-layer="rural" data-x="40" data-y="54">
+            <div id="coliban" class="gs-map__marker" style="display: none" data-layer="rural" data-x="40" data-y="54">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title">Coliban Rural<br>Water Users</p>
               <div class="gs-map__marker-info">
@@ -272,7 +281,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="rural" data-x="39.6" data-y="71">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="39.6" data-y="71">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title left">Regulated Werribee<br>Irrigation District</p>
               <div class="gs-map__marker-info">
@@ -284,7 +293,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="rural" data-x="62" data-y="72.7">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="62" data-y="72.7">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title right">Thomson Macalister<br>Irrigation District</p>
               <div class="gs-map__marker-info">
@@ -296,7 +305,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="rural" data-x="21.2" data-y="73.7">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="21.2" data-y="73.7">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title left">Unregulated Southern Systems</p>
               <div class="gs-map__marker-info">
@@ -308,7 +317,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="rural" data-x="49" data-y="65.7">
+            <div class="gs-map__marker" style="display: none" data-layer="rural" data-x="49" data-y="65.7">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title right wide">Greater Melbourne Region Unregulated Waterways</p>
               <div class="gs-map__marker-info">
@@ -320,7 +329,7 @@
                 </div>
               </div>
             </div>
-            <div id="grampians" class="gs-map__marker" data-layer="rural" data-x="10" data-y="44.2">
+            <div id="grampians" class="gs-map__marker" style="display: none" data-layer="rural" data-x="10" data-y="44.2">
               <img src="img/icons/map-rural.svg" alt="rural" class="gs-map__marker-icon"  />
               <p class="gs-map__marker-title">Grampians<br>Wimmera<br>Mallee Water</p>
               <div class="gs-map__marker-info mobile-display-right">
@@ -330,7 +339,7 @@
               </div>
             </div>
             <!-- environmental -->
-            <div class="gs-map__marker" data-layer="environmental" data-x="62" data-y="72.2">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="62" data-y="72.2">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title left">Thomson<br>River</p>
               <div class="gs-map__marker-info">
@@ -339,7 +348,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="67.5" data-y="74.2">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="67.5" data-y="74.2">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Latrobe River</p>
               <div class="gs-map__marker-info">
@@ -348,7 +357,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="85" data-y="58.5">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="85" data-y="58.5">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Snowy River</p>
               <div class="gs-map__marker-info display-left">
@@ -357,7 +366,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="49.5" data-y="64.2">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="49.5" data-y="64.2">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title top">Yarra System</p>
               <div class="gs-map__marker-info">
@@ -366,7 +375,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="36.5" data-y="74">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="36.5" data-y="74">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title left">Moorabool<br>River</p>
               <div class="gs-map__marker-info">
@@ -375,7 +384,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="39.5" data-y="70.2">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="39.5" data-y="70.2">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title top-left">Werribee<br>System</p>
               <div class="gs-map__marker-info">
@@ -384,7 +393,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="13.5" data-y="46.2">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="13.5" data-y="46.2">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title top">Wimmera System</p>
               <div class="gs-map__marker-info">
@@ -393,7 +402,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="4.1" data-y="71.7">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="4.1" data-y="71.7">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title top">Glenelg River</p>
               <div class="gs-map__marker-info display-right">
@@ -402,7 +411,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="38.1" data-y="30">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="38.1" data-y="30">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Murray River</p>
               <div class="gs-map__marker-info">
@@ -411,7 +420,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="45.5" data-y="35.1">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="45.5" data-y="35.1">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Goulburn River</p>
               <div class="gs-map__marker-info">
@@ -420,7 +429,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="15.5" data-y="8.5">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="15.5" data-y="8.5">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">Hattah Lakes</p>
               <div class="gs-map__marker-info">
@@ -429,7 +438,7 @@
                 </div>
               </div>
             </div>
-            <div class="gs-map__marker" data-layer="environmental" data-x="59" data-y="39">
+            <div class="gs-map__marker" style="display: none" data-layer="environmental" data-x="59" data-y="39">
               <img src="img/icons/map-environmental.svg" alt="environmental" class="gs-map__marker-icon" />
               <p class="gs-map__marker-title">King River</p>
               <div class="gs-map__marker-info">
