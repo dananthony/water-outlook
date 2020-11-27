@@ -113,6 +113,15 @@ jQuery(function($) {
 			$(this).parent().next().find('.gs-header__btn').first().addClass('active');
 			$('#map').css('fill', '#fff');
 
+			// set default popup text
+			$('.gs-map__marker-info-inner [data-climate-scenario="average"]').addClass('active').siblings().removeClass('active');
+
+			// set default markers
+			if (useType === "urban") {
+				$('.gs-map__marker[data-layer="urban"] .gs-map__marker-icon').attr('src', 'img/icons/map-urban-green.svg').siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			}
+		
+
 			// update subtitle
 			$('.gs-header__legend-subtitle span').text($(this).parent().next().find('.gs-header__btn').first().text());
 
@@ -149,7 +158,7 @@ jQuery(function($) {
 					}
 				}
 
-				// ide inactive rural markers and map illustrations 
+				// hide inactive rural markers and map illustrations 
 				if (contentType.indexOf('rural') > -1) {
 					if (climateScenario === "average") {
 						$('#coliban, #grampians').show();

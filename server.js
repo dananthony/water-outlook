@@ -110,8 +110,16 @@ jQuery(function($) {
 
 			// set default climate scenario and map color
 			$(this).parent().next().find('.gs-header__btn').first().addClass('active');
-            $('#map').css('fill', '#fff');
-            
+			$('#map').css('fill', '#fff');
+
+			// set default popup text
+			$('.gs-map__marker-info-inner [data-climate-scenario="average"]').addClass('active').siblings().removeClass('active');
+
+			// set default markers
+			if (useType === "urban") {
+				$('.gs-map__marker[data-layer="urban"] .gs-map__marker-icon').attr('src', './?a=502033').siblings('.gs-map__marker-info').children('.gs-map__marker-info-inner').css('border', '1px solid #00ae42');
+			}
+			
             // update subtitle
 			$('.gs-header__legend-subtitle span').text($(this).parent().next().find('.gs-header__btn').first().text());
 
