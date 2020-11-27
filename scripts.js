@@ -211,20 +211,20 @@ jQuery(function($) {
 				if (contentType.indexOf('urban') > -1) {
 					updateIcons(climateScenario);
 					if (climateScenario === "average") {
-						$('#urban-map-images').show();
+						$('#urban-map-images').fadeIn();
 					} else {
-						$('#urban-map-images').hide();
+						$('#urban-map-images').fadeOut();
 					}
 				}
 
 				// hide inactive rural markers and map illustrations 
 				if (contentType.indexOf('rural') > -1) {
 					if (climateScenario === "average") {
-						$('#coliban, #grampians').show();
-						$('#rural-map-images').show();
+						$('#coliban, #grampians').fadeIn();
+						$('#rural-map-images').fadeIn();
 					} else {
-						$('#coliban, #grampians').hide();
-						$('#rural-map-images').hide();
+						$('#coliban, #grampians').fadeOut();
+						$('#rural-map-images').fadeOut();
 					}
 				}
 
