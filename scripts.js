@@ -16,8 +16,6 @@ jQuery(function($) {
 	}
 
 	function updateLegend(contentType, subTitle) {
-		// update subtitle
-		$('.gs-header__legend-subtitle span').text(subTitle);
 		
 		// update text 
 		$('.gs-header__legend-text').removeClass('active');
@@ -115,6 +113,9 @@ jQuery(function($) {
 			$(this).parent().next().find('.gs-header__btn').first().addClass('active');
 			$('#map').css('fill', '#fff');
 
+			// update subtitle
+			$('.gs-header__legend-subtitle span').text($(this).parent().next().find('.gs-header__btn').first().text());
+
 			// update legend title 
 			$('.gs-header__legend-title span').text(buttonTitle);
 
@@ -123,6 +124,9 @@ jQuery(function($) {
 			updateFooter(contentType);
 			
 		} else {
+			// update subtitle
+			$('.gs-header__legend-subtitle span').text(buttonTitle);
+
 			if (parentUseActive) {
 				// update active climate scenario button
 				$(this).siblings().removeClass('active');

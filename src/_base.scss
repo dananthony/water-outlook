@@ -31,3 +31,15 @@ button {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+@media only screen and (min-width: 48em) {
+  .col-sm-10 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+#main {
+  background: $color-background;
+}
