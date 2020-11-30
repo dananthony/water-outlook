@@ -174,9 +174,9 @@ jQuery(function($) {
 				if (contentType.indexOf('rural') > -1) {
 					if (climateScenario === "average") {
 						$('#coliban, #grampians').fadeIn();
-						$('#rural-map-images').fadeOut();
+						$('#rural-map-images').fadeIn();
 					} else {
-						$('#coliban, #grampians').fadeIn();
+						$('#coliban, #grampians').fadeOut();
 						$('#rural-map-images').fadeOut();
 					}
 				}
